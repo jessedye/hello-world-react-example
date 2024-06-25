@@ -1,0 +1,1 @@
+docker run --publish 8080:80 react-hello:latest
