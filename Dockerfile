@@ -7,6 +7,7 @@ COPY --chown=node:node . .
 EXPOSE 80
 
 RUN export NODE_OPTIONS=--openssl-legacy-provider
+RUN npm install
 RUN npm run build
 
 FROM nginx:alpine
