@@ -15,6 +15,8 @@ FROM nginx:alpine
 # Switch to root temporarily to set permissions
 USER root
 
+RUN apk update && apk upgrade
+
 # Ensure directories exist and set permissions to the nginx user
 RUN mkdir -p /www /app/src && \
     chown -R nginx:nginx /www /app/src
