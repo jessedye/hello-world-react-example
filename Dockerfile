@@ -12,12 +12,11 @@ RUN npm run build
 
 FROM nginx:alpine
 
-# Switch to root temporarily to change permissions
+# Switch to root temporarily to set permissions
 USER root
 
-# Ensure nginx user exists and has the necessary directory permissions
-RUN adduser -D -g 'www' nginx && \
-    mkdir -p /www /app/src && \
+# Ensure directories exist and set permissions to the nginx user
+RUN mkdir -p /www /app/src && \
     chown -R nginx:nginx /www /app/src
 
 # Copy the files and set ownership to nginx user
