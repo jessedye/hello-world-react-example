@@ -19,7 +19,7 @@ RUN apk update && apk upgrade
 
 # Ensure directories exist and set permissions to the nginx user
 RUN mkdir -p /www /app/src && \
-    chown -R nginx:nginx /www /app/src
+    chown -R nginx:nginx /www /app/src /var/cache/nginx/
 
 # Copy the files and set ownership to nginx user
 COPY --from=builder --chown=nginx:nginx /home/node/nginx/nginx.conf /etc/nginx/nginx.conf
