@@ -23,7 +23,7 @@ RUN mkdir -p /www /app/src && \
 
 # Copy the files and set ownership to nginx user
 COPY --from=builder --chown=nginx:nginx /home/node/nginx/nginx.conf /etc/nginx/nginx.conf
-COPY --from=builder --chown=nginx:nginx /home/node/build /www
+COPY --from=builder --chown=nginx:nginx /home/node/dist /www
 COPY --from=builder --chown=nginx:nginx /home/node/src /app/src
 
 # Switch back to the nginx user
