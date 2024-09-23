@@ -8,7 +8,9 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Hello World from React!</h1>
         <p>
-          This is a sample React application.
+          This is a sample React application using Flask.<br/>
+          Version: 0.1<br/>
+          By: Jesse Dye
         </p>
         <a
           className="App-link"
